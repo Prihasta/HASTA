@@ -6,7 +6,7 @@
 }
 
 .navbar {
-    background: #131313;
+    background: #0f0f0f;
     height: 80px;
     display: flex;
     justify-content: center;
@@ -91,7 +91,7 @@
     border: none;
     outline: none;
     border-radius: 4px;
-    background: #a4a4a4;
+    background: #4d4d4d;
     color: #fff;
 }
 
@@ -201,5 +201,144 @@
 
     #mobile-menu.is-active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+
+/* Hero Section CSS */
+.main {
+    display: grid;
+    background-color: #141414;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-self: center;
+    margin: 0 auto;
+    height: 90vh;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    padding: 0 50px;
+}
+
+.main__content h1 {
+    font-size: 2rem;
+    background-color: #ff8177;
+    background-image: linear-gradient(to top, #4e4e4e 0%, #afafaf 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
+.main__content h2 {
+    font-size: 3.5rem;
+    background-color: #ff8177;
+    background-image: linear-gradient(to top, #b7b7b7 0%, #ffffff 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
+.main__content p {
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color:#7a7a7a;
+}
+
+.main__btn {
+    font-size: 1rem;
+    background-image: linear-gradient(to top, #4a3ceb 0%, #7050e7 100%);
+    padding: 14px 32px;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    margin-top: 2rem;
+    cursor: pointer;
+    position: relative; /* Ensure positioning is relative to this element */
+    transition: all 0.35s;
+    outline: none;
+    overflow: hidden; /* This ensures the :after pseudo-element doesn't overflow */
+}
+
+.main__btn a {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    text-decoration: none;
+}
+
+.main__btn:after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: #4837ff;
+    transition: all 0.35s;
+    border-radius: 4px;
+    z-index: 1; /* Ensure it stays behind the content */
+}
+
+.main__btn:hover {
+    color: #fff;
+}
+
+.main__btn:hover:after {
+    width: 100%; /* The width will expand within the button's bounds */
+}
+
+.main__img--container {
+    text-align: center;
+    height: auto; /* Ensure the container has a defined height */
+}
+
+#main__img {
+    max-height: 80%; /* Max-height ensures the image doesn’t overflow */
+    max-width: 80%;
+    height: auto; /* Adjust height automatically based on the image’s aspect ratio */
+    width: auto; /* Same for width */
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+    .main__container {
+        display: grid;
+        grid-template-columns: auto;
+        justify-content: center; /* Centers horizontally */
+        align-content: center; /* Centers vertically */
+        width: 100%;
+        margin: 0 auto;
+        height: 90vh;
+    }
+    
+    .main__content {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    .main__content h1 {
+        font-size: 2.5rem;
+        margin-top: 2rem;
+    }
+
+    .main__content h2 {
+        font-size: 3rem;
+    }
+
+    .main__content p {
+        margin-top: 1rem;
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .main__content h1 {
+        font-size: 2rem;
+
     }
 }
