@@ -207,18 +207,23 @@
 
 /* Hero Section CSS */
 .main {
-    display: grid;
     background-color: #141414;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    justify-self: center;
-    margin: 0 auto;
-    height: 90vh;
-    z-index: 1;
-    width: 100%;
-    max-width: 1300px;
-    padding: 0 50px;
 }
+
+.main__container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        justify-self: center;
+        margin: 0 auto;
+        height: 90vh;
+        background-color: #141414;
+        z-index: 1;
+        width: 100%;
+        max-width: 1300px;
+        padding: 0 50px;
+    }
+
 
 .main__content h1 {
     font-size: 2rem;
@@ -293,6 +298,11 @@
 }
 
 .main__img--container {
+    float: right;
+    margin-left: 80px; /* Add space between image and text */
+    width: 450px;
+    border: none;
+    border-radius: 15px;
     text-align: center;
     height: auto; /* Ensure the container has a defined height */
 }
@@ -313,17 +323,17 @@
         align-content: center; /* Centers vertically */
         width: 100%;
         margin: 0 auto;
-        height: 90vh;
+        height: 140vh;
     }
     
     .main__content {
         text-align: center;
-        margin-bottom: 4rem;
+        margin-bottom: 2rem;
     }
 
     .main__content h1 {
         font-size: 2.5rem;
-        margin-top: 2rem;
+        margin-top: 1rem;
     }
 
     .main__content h2 {
@@ -337,8 +347,32 @@
 }
 
 @media screen and (max-width: 480px) {
+    .main__container {
+        display: grid;
+        grid-template-columns: auto;
+        justify-content: center; /* Centers horizontally */
+        align-content: center; /* Centers vertically */
+        width: 100%;
+        margin: 0 auto;
+        height: 90vh;
+    }
+
+    .main__content {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
     .main__content h1 {
         font-size: 2rem;
+        margin-top: 1rem;
+    }
 
+    .main__content h2 {
+        font-size: 2.5rem;
+    }
+
+    .main__content p {
+        margin-top: 1rem;
+        font-size: 1rem;
     }
 }
