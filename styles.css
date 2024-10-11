@@ -330,7 +330,7 @@
         #ff8c7f 21%,
         #f99185 52%,
         #cf556c 78%,
-        #b12a5b 100%,
+        #b12a5b 100%
     );
     background-size: 100%;
     margin-bottom: 5rem;
@@ -340,6 +340,7 @@
     -webkit-text-fill-color: transparent;
     -moz-text-fill-color: transparent;
 }
+
 
 .service__container {
     display: flex;
@@ -497,6 +498,34 @@
 .social__media {
     max-width: 1000px;
     width: 100%;
+}
+
+.social__media--wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto 0 auto;
+}
+
+.social__icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 240px;
+}
+
+.social__logo {
+    color: #fff;
+    justify-self: flex-start;
+    margin-left: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
 }
 
 /* Mobile Responsive */
