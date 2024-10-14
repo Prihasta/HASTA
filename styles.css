@@ -344,8 +344,9 @@
 
 .service__container {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     flex-wrap: wrap;
+    gap: 2rem;
 }
 
 .services__card {
@@ -388,6 +389,20 @@
     outline: none;
     border-radius: 4px;
     background: #ff7706;
+    position: absolute;
+    top: 440px;
+    left: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+
+}.services__card button:hover {
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background: transparent;
+    transition: 0.2s ease-in-out;
     position: absolute;
     top: 440px;
     left: 30px;
