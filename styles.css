@@ -319,6 +319,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: auto;
 }
 
 .services h1 {
@@ -344,14 +345,13 @@
 
 .service__container {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 2rem;
 
 }
 
 .services__card {
-    margin: 4rem ;
+    margin: 2rem ;
     height: 525px;
     width: 400px;
     border-radius: 4px;
@@ -362,6 +362,7 @@
     background-size: cover;
     position: relative;
     color: #fff;
+    padding: 30px;
 }
 
 .services__card:nth-child(2) {
@@ -369,6 +370,7 @@
     bottom, rgba(0,0,0,0) 0%, 
     rgba(17, 17, 17, 0.6) 100%), 
     url('/images/IMG_2.jpg');
+    padding: 30px;
 }
 
 .services h2 {
@@ -402,7 +404,6 @@
     border: none;
     outline: none;
     border-radius: 4px;
-    
     opacity: 60%;
     transition: 0.2s ease-in-out;
     position: absolute;

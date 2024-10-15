@@ -204,6 +204,8 @@
     }
 }
 
+
+/* Services Section */
 .services {
     background-color: #141414;
     height: 100%;
@@ -219,4 +221,34 @@
 
 .services p {
     font-size: 18px;
+}
+
+/* For screens smaller than 768px (tablets and below) */
+@media only screen and (max-width: 768px) {
+    .services {
+        padding: 15px;
+    }
+    
+    .services h1 {
+        font-size: 28px;
+    }
+
+    .services p {
+        font-size: 16px;
+    }
+}
+
+/* For screens smaller than 480px (mobile phones) */
+@media only screen and (max-width: 480px) {
+    .services {
+        padding: 10px;
+    }
+    
+    .services h1 {
+        font-size: 24px;
+    }
+
+    .services p {
+        font-size: 14px;
+    }
 }
