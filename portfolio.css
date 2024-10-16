@@ -258,6 +258,14 @@
     object-fit: cover; /* Ensures video fills the height without stretching */
   }
 
+  .card-images {
+    width: 100%; /* Take up full width */
+    height: 400px; /* Fixed height to make the video larger */
+    border-radius: 5px;
+    margin-top: 15px;
+    object-fit: cover; /* Ensures video fills the height without stretching */
+  }
+
   .card h2 {
     position: absolute;
     top: 445px;
@@ -272,9 +280,10 @@
     margin-bottom: 20px;
     position: absolute;
     top: 475px;
-    left: 10px;
-    right: 10px;
+    left: 25px;
+    right: 25px;
     color: #898989;
+    text-align: left;
   }
   
   /* button {

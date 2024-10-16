@@ -203,3 +203,42 @@
         transform: translateY(-8px) rotate(-45deg);
     }
 }
+
+
+body {
+    background-color: #141414;
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+}
+
+.services {
+    text-align: left;
+    padding: 50px;
+
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    background-color: #ff8177;
+    background-image: linear-gradient(
+        to right,
+        #ff8177 0%,
+        #de4812 0%,
+        #a11660 21%,
+        #d13726 52%,
+        #cf556c 78%,
+        #b12a5b 100%
+    );
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
+p {
+    font-size: 18px;
+    color: #FFFFFF;
+    line-height: 1.6;
+}
