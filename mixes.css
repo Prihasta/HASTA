@@ -207,6 +207,8 @@
 
 /* Services Section */
 .services {
+    overflow-x: hidden;
+    overflow-y: hidden;
     background-color: #141414;
     height: 100%;
     color: #ffffff; /* Makes the text color white for better contrast */

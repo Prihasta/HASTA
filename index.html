@@ -49,31 +49,44 @@
                 <p>I’m Hasta, a passionate freelance DJ and a dedicated computer science student. With a deep love for music and technology, I bring vibrant beats to life while honing my skills in software development. Whether you’re here for electrifying sets or innovative tech solutions, I’m excited to share my unique blend of artistry and logic with you!</p>
                 <button class="main__btn"><a href="https://drive.google.com/file/d/1cQip8E1FobrlAaM3HePVUR2tCOeWOD0D/view?usp=sharing">Download CV</a></button>
             </div>
-            <div class="main__img--container">
-                <img src="images/main__img.png" class="main__img--container">
-            </div>
+            <video class="main__img--container" loop autoplay muted>
+                <source src="images/main__img.mp4" type="video/mp4">
+            </video>
+
         </div>
     </div>
 
-    <!-- Services Section -->
-     <div class="services">
-        <h1>Take a closer look.</h1>
-        <div class="services__container">
-            <div class="services__card">
-                <h2>DJ Performances</h2>
-                <p>Dynamic electronic rhytms</p>
-                <button onclick="window.location.href='portfolio.html';">See Portfolio</button> <!-- Redirects to a portfolio page -->
-            </div> 
-            <div class="services__card">
-                <h2>Events and Parties</h2>
-                <p>Private · Corporate · Clubs</p>
-                <button onclick="window.location.href='booking.html';">Book Now!</button> <!-- Redirects to a booking page -->
-            </div> 
+
+
+<!-- Services Section -->
+<div class="services">
+    <!-- LED Running Text Left -->
+    <div class="led-container-left">
+        <div class="led-text-left">Book now! · Book now! · Book now! · Book now! · Book now!· Book now! · Book now! · Book now! · Book now!· Book now! · Book now! · Book now! · Book now!· Book now! · Book now!· Book now! · Book now! · Book now!· Book now! · Book now! · Book now! · Book now!· Book now! · Book now!</div>
+    </div>
+    <h1>Take a closer look.</h1>
+    <div class="services__container">
+        <div class="services__card">
+            <h2>DJ Performances</h2>
+            <p>Dynamic electronic rhythms</p>
+            <button onclick="window.location.href='portfolio.html';">See Portfolio</button> <!-- Redirects to a portfolio page -->
+        </div> 
+        <div class="services__card">
+            <h2>Events and Parties</h2>
+            <p>Private · Corporate · Clubs</p>
+            <button onclick="window.location.href='booking.html';">Book Now!</button> <!-- Redirects to a booking page -->
         </div>
-     </div>
+    </div>
+    <!-- LED Running Text Right -->
+    <div class="led-container-right">
+        <div class="led-text-right">DJ Performances · DJ Performances · DJ Performances · DJ Performances · DJ Performances· DJ Performances · DJ Performances · DJ Performances · DJ Performances· DJ Performances · DJ Performances · DJ Performances · DJ Performances· DJ Performances · DJ Performances · DJ Performances · DJ Performances</div>
+    </div>
+</div>
+
 
      <!-- Footer Section -->
       <div class="footer__container">
+        <p class="website__right">© Made by HASTA. All rights reserved</p>
         <div class="footer__links">
             <div class="footer__link--wrapper">
                 <!-- <div class="footer__link--items">
@@ -110,12 +123,13 @@
             </div> -->
         </div> 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        
         <div class="social__media">
             <div class="social__media--wrap">
                 <div class="footer__logo">
                     <!-- <a href="/" id="footer__logo"><i class="fas faa--gem"></i>NEXT</a> -->
                 </div>
-                <!-- <p class="website__right">NEXT 2020. All rights reserved</p> -->
+
                 <div class="social__icons">
                     <a href="https://wa.link/9zexez" class="social__icon--link" target="_blank">
                         <i class="fab fa-whatsapp"></i>

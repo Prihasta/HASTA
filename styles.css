@@ -207,6 +207,8 @@
 
 /* Hero Section CSS */
 .main {
+    overflow-x: hidden;
+    overflow-y: hidden;
     background-color: #141414;
 }
 
@@ -298,23 +300,87 @@
 }
 
 .main__img--container {
-    margin-left: 10px;
+
     width: 450px;
-    border: none;
     border-radius: 15px;
     text-align: center;
-    height: auto; /* Ensure the container has a defined height */
+    margin-left: 30px;
+    border: none;
 }
 
 #main__img {
-    max-height: 80%; /* Max-height ensures the image doesn’t overflow */
     max-width: 80%;
-    height: auto; /* Adjust height automatically based on the image’s aspect ratio */
-    width: auto; /* Same for width */
+    max-height: 80%;
+    height: auto;
+    width: auto;
 }
+
+/* General styling for services section */
+.services {
+    position: relative;
+    height: 100vh; /* Adjust based on your content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+
+/* LED Text Containers */
+.led-container-left, .led-container-right {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 20px; /* Adjust this based on the text length */
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    max-height: 100%; /* Ensure the containers do not exceed card height */
+    height: auto;
+}
+
+.led-container-left {
+    left: 0px;
+    color: #afafaf;
+    font-size: 1.2rem;
+}
+
+.led-container-right {
+    right: 0;
+    color: #afafaf;
+    font-size: 1.2rem;
+}
+
+/* LED Text */
+.led-text-left, .led-text-right {
+    writing-mode: vertical-rl; /* Make text vertical */
+    transform: rotate(180deg); /* Flip the text for left container */
+    white-space: nowrap;
+    animation: scroll-vertical 30s linear infinite; /* Slower speed */
+    text-transform: uppercase; /* Make text uppercase */
+    font-weight: bold; /* Make text bold */
+}
+
+.led-text-right {
+    writing-mode: vertical-rl;
+}
+
+/* Animation for vertical scrolling */
+@keyframes scroll-vertical {
+    0% {
+        transform: translateY(10%);
+    }
+    100% {
+        transform: translateY(-30%);
+    }
+}
+
+
+
 
 /* Services Section CSS */
 .services {
+
     background: #141414;
     display: flex;
     flex-direction: column;
@@ -347,7 +413,7 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-
+    z-index: 4; /* Ensure container is above the LED text */
 }
 
 .services__card {
@@ -363,6 +429,7 @@
     position: relative;
     color: #fff;
     padding: 30px;
+    z-index: 5; /* Ensure cards are above everything else */
 }
 
 .services__card:nth-child(2) {
@@ -428,6 +495,19 @@
         font-size: 2rem;
         margin-top: 12rem;
     }
+    .main__img--container {
+        width: 450px;
+        border-radius: 15px;
+        text-align: center;
+        margin-left: 90px;
+        border: none;
+    }
+    #main__img {
+        max-width: 80%;
+        max-height: 80%;
+        height: auto;
+        width: auto;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -445,6 +525,36 @@
     .services__card {
         width: 300px;
     }
+
+    .main__img--container {
+        width: 250px;
+        border: none;
+        border-radius: 15px;
+        text-align: center;
+        margin-left: 30px; /* Adjust margin for smaller screens*/
+    
+    }
+    
+    #main__img {
+        max-width: 60%; /* Adjust max-width for responsiveness */
+        max-height: 60%; /* Adjust max-height for responsiveness */
+        height: auto;
+        width: auto;
+    }
+}
+
+
+.website__right {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background-color: transparent; /* Adjust if needed */
+    font-size: 12px;
+    color: #464646;
+    z-index: 100; /* Keeps it above other elements if needed */
 }
 
 /* Footer CSS */
