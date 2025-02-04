@@ -31,7 +31,10 @@
                     <a href="about.html" class="navbar__links"> About </a>
                 </li>
                 <li class="navbar__item">
-                    <a href="mixes.html" class="navbar__links"> Mixes </a>
+                    <a href="mixes.html" class="navbar__links"> Musics </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="portfolio.html" class="navbar__links"> Portfolio </a>
                 </li>
                 <li class="navbar__btn">
                     <a href="https://wa.link/dqfy5w" class="button"> Get In Touch! </a>
@@ -45,7 +48,7 @@
         <div class="main__container">
             <div class="main__content">
                 <h1>Hello, It's Me</h1>
-                <h2>Hasta</h2>
+                <h2>HASTA</h2>
                 <p>I’m Hasta, a passionate freelance DJ and a dedicated computer science student. With a deep love for music and technology, I bring vibrant beats to life while honing my skills in software development. Whether you’re here for electrifying sets or innovative tech solutions, I’m excited to share my unique blend of artistry and logic with you!</p>
                 <button class="main__btn"><a href="https://drive.google.com/file/d/1cQip8E1FobrlAaM3HePVUR2tCOeWOD0D/view?usp=sharing">Download CV</a></button>
             </div>
@@ -56,7 +59,30 @@
         </div>
     </div>
 
-
+    <div class="header"><h1 id="glitch-text">Take a closer look.</h1></div>
+    <script>
+        const translations = [
+          "Hello, World", "Hola, Mundo!", "Bonjour, Monde!", "Hallo, Welt!", "Ciao, Mondo!",
+          "こんにちは、世界！", "안녕하세요, 세계!", "Привет, мир!", "你好，世界！", "Merhaba, Dünya!",
+        ];
+      
+        const textElement = document.getElementById("glitch-text");
+      
+        function glitchEffect() {
+          let count = 0;
+          let glitchInterval = setInterval(() => {
+            textElement.textContent = translations[Math.floor(Math.random() * translations.length)];
+            count++;
+            if (count > 20) {  // After 20 rapid changes, stop the glitch effect
+              clearInterval(glitchInterval);
+              textElement.textContent = "Take a closer look."; // Default back to English
+              setTimeout(glitchEffect, 3000); // Wait 3 seconds before repeating
+            }
+          }, 50); // Change text every 50 milliseconds
+        }
+      
+        glitchEffect(); // Start animation loop
+      </script>
 
 <!-- Services Section -->
 <div class="services">
@@ -64,19 +90,19 @@
     <div class="led-container-left">
         <div class="led-text-left">Book now! · Book now! · Book now! · Book now! · Book now!· Book now! · Book now! · Book now! · Book now!· Book now! · Book now! · Book now! · Book now!· Book now! · Book now!· Book now! · Book now! · Book now!· Book now! · Book now! · Book now! · Book now!· Book now! · Book now!</div>
     </div>
-    <h1>Take a closer look.</h1>
     <div class="services__container">
         <div class="services__card">
-            <h2>DJ Performances</h2>
-            <p>Dynamic electronic rhythms</p>
-            <button onclick="window.location.href='portfolio.html';">See Portfolio</button> <!-- Redirects to a portfolio page -->
+            <!-- <h2>DJ Performances</h2>
+            <p>Dynamic electronic rhythms</p> -->
+            <button onclick="window.location.href='portfolio.html';">Events</button> <!-- Redirects to a portfolio page -->
         </div> 
         <div class="services__card">
-            <h2>Events and Parties</h2>
-            <p>Private · Corporate · Clubs</p>
-            <button onclick="window.location.href='booking.html';">Book Now!</button> <!-- Redirects to a booking page -->
+            <!-- <h2>Events and Parties</h2>
+            <p>Private · Corporate · Clubs</p> -->
+            <button onclick="window.location.href='mixes.html';">Musics</button> <!-- Redirects to a booking page -->
         </div>
     </div>
+    
     <!-- LED Running Text Right -->
     <div class="led-container-right">
         <div class="led-text-right">DJ Performances · DJ Performances · DJ Performances · DJ Performances · DJ Performances· DJ Performances · DJ Performances · DJ Performances · DJ Performances· DJ Performances · DJ Performances · DJ Performances · DJ Performances· DJ Performances · DJ Performances · DJ Performances · DJ Performances</div>

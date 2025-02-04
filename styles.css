@@ -138,7 +138,7 @@
         opacity: 1;
         transition: all 0.5s ease;
         z-index: 99;
-        height: 50vh;
+        height: 80vh;
         font-size: 1.6rem;
     }
 
@@ -254,9 +254,12 @@
     font-size: 1rem;
     font-weight: 200;
     color:#ffffff;
+
 }
 
 .main__btn {
+    text-align: center;
+    width: 200px;
     font-size: 1rem;
     background-image: linear-gradient(to top, #4a3ceb 0%, #7050e7 100%);
     padding: 14px 32px;
@@ -276,6 +279,7 @@
     z-index: 2;
     color: #fff;
     text-decoration: none;
+    
 }
 
 .main__btn:after {
@@ -300,8 +304,7 @@
 }
 
 .main__img--container {
-
-    width: 450px;
+    width: 600px; /* Increase the container width */
     border-radius: 15px;
     text-align: center;
     margin-left: 30px;
@@ -309,11 +312,12 @@
 }
 
 #main__img {
-    max-width: 80%;
-    max-height: 80%;
+    max-width: 100%; /* Allow the image to take up more space in its container */
+    max-height: 100%;
     height: auto;
     width: auto;
 }
+
 
 /* General styling for services section */
 .services {
@@ -375,60 +379,64 @@
     }
 }
 
-
-
-
-/* Services Section CSS */
-.services {
-
-    background: #141414;
+/* Services Section */
+.header{
+    padding: 40px;
     display: flex;
-    flex-direction: column;
+    justify-content: center; /* Centers horizontally */
+    align-items: center;    /* Centers vertically */
+    text-align: center;     /* Ensures text alignment for multiple lines */
+    height: 30vh;          /* Takes up the full height of the viewport */
+    box-sizing: border-box; /* Includes padding in height calculation */
+}
+.header h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;            /* Ensures it spans the full width for alignment */
+}
+    
+body {
+    margin: 0;
+    padding: 0;
+    background: #141414;
+    color: #929292;
     align-items: center;
     height: auto;
 }
 
-.services h1 {
-    background-color: #ff8177;
-    background-image: linear-gradient(
-        to right,
-        #ff8177 0%,
-        #ff867a 0%,
-        #ff8c7f 21%,
-        #f99185 52%,
-        #cf556c 78%,
-        #b12a5b 100%
-    );
-    background-size: 100%;
-    margin-bottom: 5rem;
-    font-size: 2.5rem;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent;
+
+.services {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    height: auto;
 }
 
-
-.service__container {
+.services__container {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    z-index: 4; /* Ensure container is above the LED text */
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    margin-top: 20px; /* Add space between title and cards */
 }
 
 .services__card {
-    margin: 2rem ;
-    height: 525px;
-    width: 400px;
-    border-radius: 4px;
+    margin: 5px;
+    height: 575px;
+    width: 450px;
     background-image: linear-gradient(to 
     bottom, rgba(0,0,0,0) 0%, 
     rgba(17, 17, 17, 0.6) 100%), 
     url('/images/IMG_1.jpg');
     background-size: cover;
     position: relative;
-    color: #fff;
-    padding: 30px;
+    flex: 1 1 calc(50% - 20px); /* Two cards side by side, accounting for gap */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: filter 0.8s ease, transform 0.3s ease, box-shadow 0.3s ease;
     z-index: 5; /* Ensure cards are above everything else */
 }
 
@@ -440,57 +448,59 @@
     padding: 30px;
 }
 
-.services h2 {
-    position: absolute;
-    top: 350px;
-    left: 30px;
+.services__card:hover {
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    filter: grayscale(100%);
+}
+
+.services__card h2 {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 10px;
 }
 
 .services__card p {
-    position: absolute;
-    top: 400px;
-    left: 30px;
-}
-
-.services__card button {
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    outline: none;
-    border-radius: 4px;
-    background: #ff7706;
-    position: absolute;
-    top: 440px;
-    left: 30px;
     font-size: 1rem;
-    cursor: pointer;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
 
-}.services__card button:hover {
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    outline: none;
-    border-radius: 4px;
-    opacity: 60%;
-    transition: 0.2s ease-in-out;
+
+button {
     position: absolute;
-    top: 440px;
-    left: 30px;
-    font-size: 1rem;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(101, 101, 101, 0.135); /* Semi-transparent overlay */
+    color: transparent; /* Hide text initially */
+    border: none;
+    border-radius: 0; /* Align with the card */
+    font-size: 4rem;
     cursor: pointer;
+    opacity: 1; /* Hidden by default */
+    transition: opacity 0.8s ease, color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    text-transform: uppercase;
 }
 
-.services__card:hover {
-    transform: scale(1.075);
-    transition: 0.2s ease-in;
-    cursor: pointer;
+button:hover {
+    opacity: 0.5; /* Fully visible on hover */
+    color: #fff; /* Show the text */
+    filter: grayscale(100%);
 }
+
+
+
+
 
 @media screen and (max-width: 960px) {
     .services {
-        height: 1600px;
+        height: 1000px;
     }
-
     .services h1 {
         font-size: 2rem;
         margin-top: 12rem;
@@ -516,18 +526,50 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        gap: 20px; /* Menambahkan jarak antar kartu */
+        height: auto; /* Sesuaikan tinggi otomatis */
+        padding: 20px 0; /* Memberikan padding atas dan bawah */
     }
-
+    
     .services h1 {
-        font-size: 1.5rem;
+        background-size: 100%;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        color: #ffffff; /* Pastikan teks terlihat */
     }
 
     .services__card {
-        width: 300px;
+        width: 100%; /* Lebar kartu menyesuaikan dengan layar */
+        max-width: 300px; /* Batasi lebar maksimum */
+        height: 405px; /* Tinggi otomatis agar menyesuaikan konten */
+        background-image: linear-gradient(to 
+            bottom, rgba(0,0,0,0) 0%, 
+            rgba(17, 17, 17, 0.6) 100%), 
+        url('/images/IMG_1.jpg');
+        background-size: cover;
+        position: relative;
+        color: #fff; /* Teks warna putih */
+        overflow: hidden; /* Menyembunyikan overflow */
+        display: flex;
+        flex-direction: column; /* Elemen di dalam kartu vertikal */
+        align-items: center; /* Rata tengah secara horizontal */
+        padding: 100px; /* Padding untuk konten dalam kartu */
     }
 
+    .services__card:nth-child(2) {
+        background-image: linear-gradient(
+            to bottom, 
+            rgba(0, 0, 0, 0) 0%, 
+            rgba(17, 17, 17, 0.6) 100%
+        ), 
+        url('/images/IMG_2.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+}
+
     .main__img--container {
-        width: 250px;
+        width: 450px;
         border: none;
         border-radius: 15px;
         text-align: center;
@@ -541,7 +583,21 @@
         height: auto;
         width: auto;
     }
-}
+
+    .website__right {
+        position: relative;
+        margin-top: 75px;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+        background-color: transparent; /* Adjust if needed */
+        font-size: 12px;
+        color: #464646;
+        z-index: 100; /* Keeps it above other elements if needed */
+    }
+
 
 
 .website__right {
@@ -665,7 +721,17 @@
         align-content: center; /* Centers vertically */
         width: 100%;
         margin: 0 auto;
-        height: 140vh;
+        height: 60vh;
+    }
+
+    .main__img--container {
+        margin-right: 1.8rem;
+        margin-bottom: 4rem;
+        width: 400px;
+        border: none;
+        border-radius: 15px;
+        text-align: center;
+        height: auto; /* Adjust height automatically based on the image’s aspect ratio */
     }
     
     .main__content {
@@ -686,6 +752,24 @@
         margin-top: 1rem;
         font-size: 1rem;
     }
+
+    .main__btn {
+        text-align: center;
+        width: 200px;
+        font-size: 1rem;
+        background-image: linear-gradient(to top, #4a3ceb 0%, #7050e7 100%);
+        padding: 14px 32px;
+        border: none;
+        border-radius: 4px;
+        color: #fff;
+        margin-top: 2rem;
+        cursor: pointer;
+        position: relative; /* Ensure positioning is relative to this element */
+        transition: all 0.35s;
+        outline: none;
+        overflow: hidden; /* This ensures the :after pseudo-element doesn't overflow */
+        margin: 2rem auto; /* Use auto margins to center horizontally */
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -696,7 +780,7 @@
         align-content: center; /* Centers vertically */
         width: 100%;
         margin: auto;
-        height: 90vh;
+        height: 125vh;
     }
 
     .main__img--container {
@@ -707,6 +791,7 @@
         text-align: center;
         height: auto; /* Adjust height automatically based on the image’s aspect ratio */
     }
+    
 
     #main__img {
         max-height: 80%; /* Max-height ensures the image doesn’t overflow */
@@ -733,4 +818,23 @@
         margin-top: 1rem;
         font-size: 1rem;
     }
+
+    .main__btn {
+        text-align: center;
+        width: 200px;
+        font-size: 1rem;
+        background-image: linear-gradient(to top, #4a3ceb 0%, #7050e7 100%);
+        padding: 14px 32px;
+        border: none;
+        border-radius: 4px;
+        color: #fff;
+        margin-top: 2rem;
+        cursor: pointer;
+        position: relative; /* Ensure positioning is relative to this element */
+        transition: all 0.35s;
+        outline: none;
+        overflow: hidden; /* This ensures the :after pseudo-element doesn't overflow */
+        margin: 2rem auto; /* Use auto margins to center horizontally */
+    }
 }
+

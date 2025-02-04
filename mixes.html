@@ -31,7 +31,10 @@
                     <a href="about.html" class="navbar__links"> About </a>
                 </li>
                 <li class="navbar__item">
-                    <a href="mixes.html" class="navbar__links"> Mixes </a>
+                    <a href="mixes.html" class="navbar__links"> Musics </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="portfolio.html" class="navbar__links"> Portfolio </a>
                 </li>
                 <li class="navbar__btn">
                     <a href="https://wa.link/dqfy5w" class="button"> Get In Touch! </a>
@@ -40,7 +43,44 @@
         </div>
     </nav>
 
-    <div class="services">
-        <h1>Mixes Page.</h1>
-        <p>Hasta is currently working on something amazing! Stay tuned.</p>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Music Player</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <!-- Music 1 -->
+        <div class="music-section">
+            <div class="album-cover">
+                <img src="images/music1.png" alt="Album Cover">
+            </div>
+            <script src="https://unpkg.com/wavesurfer.js"></script>
+            <div class="music-controls">
+                <h2>SZA - The Weekend (HASTA Remix)</h2>
+                <h3>Unofficial Remix</h3>
+                <audio controls>
+                    <source src="audios/TheWeekend (Master).mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        </div>
+        <!-- Music 2 -->
+        <!-- <div class="music-section">
+            <div class="album-cover">
+                <img src="images/main__img.jpg" alt="Album Cover">
+            </div>
+            <script src="https://unpkg.com/wavesurfer.js"></script>
+            <div class="music-controls">
+                <h2>SZA - The Weekend (HASTA Remix)</h2>
+                <h3>Artist Name</h3>
+                <audio controls>
+                    <source src="audios/TheWeekend (Master).mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        </div> -->
+    </body>
+
         <script src="mixes.js"></script>

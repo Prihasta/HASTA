@@ -6,14 +6,37 @@ menu.addEventListener('click', function() {
     menuLinks.classList.toggle('active'); 
 });
 
-const videos = document.querySelectorAll('.card-video');
+// Get overlay elements
+const overlay = document.getElementById("fullscreenOverlay");
+const fullscreenImage = document.getElementById("fullscreenImage");
 
-videos.forEach(video => {
-  video.addEventListener('mouseover', () => {
-    video.play();
-  });
-  video.addEventListener('mouseout', () => {
-    video.pause();
-    video.currentTime = 0;  // Reset video to the start when hover ends
-  });
+// Open fullscreen image on click
+document.querySelectorAll(".grid-item img").forEach(img => {
+    img.addEventListener("click", function () {
+        fullscreenImage.src = this.src;
+        overlay.style.display = "flex"; // Ensure overlay is visible
+        setTimeout(() => {
+            overlay.classList.add("active"); // Add fade-in effect
+        }, 10); // Small delay for smooth effect
+    });
+});
+
+// Close when clicking outside the image
+overlay.addEventListener("click", function (event) {
+    if (event.target === overlay) {
+        overlay.classList.remove("active"); // Remove animation
+        setTimeout(() => {
+            overlay.style.display = "none"; // Hide after animation ends
+        }, 300);
+    }
+});
+
+// Close with "Escape" key
+document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+        overlay.classList.remove("active");
+        setTimeout(() => {
+            overlay.style.display = "none";
+        }, 300);
+    }
 });
