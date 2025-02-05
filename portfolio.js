@@ -1,42 +1,79 @@
-const menu = document.querySelector('#mobile-menu');
-const menuLinks = document.querySelector('.navbar__menu');
+document.addEventListener("DOMContentLoaded", function () {
+    const videos = document.querySelectorAll(".grid-item video");
+    const overlay = document.getElementById("fullscreenOverlay");
+    let activeOverlay = null;
+    
+    videos.forEach(video => {
+        video.addEventListener("click", function () {
+            if (activeOverlay) return;
+            
+            const wrapper = document.createElement("div");
+            wrapper.style.position = "fixed";
+            wrapper.style.top = "0";
+            wrapper.style.left = "0";
+            wrapper.style.width = "100vw";
+            wrapper.style.height = "100vh";
+            wrapper.style.background = "rgba(0, 0, 0, 0.9)";
+            wrapper.style.zIndex = "1000";
+            wrapper.style.display = "flex";
+            wrapper.style.justifyContent = "center";
+            wrapper.style.alignItems = "center";
+            
+            const clonedVideo = video.cloneNode(true);
+            clonedVideo.style.maxWidth = "90vw";
+            clonedVideo.style.maxHeight = "80vh";
+            clonedVideo.controls = true;
+            clonedVideo.autoplay = true;
+            
+            wrapper.appendChild(clonedVideo);
+            document.body.appendChild(wrapper);
+            activeOverlay = wrapper;
 
-menu.addEventListener('click', function() {
-    menu.classList.toggle('is-active');
-    menuLinks.classList.toggle('active'); 
-});
-
-// Get overlay elements
-const overlay = document.getElementById("fullscreenOverlay");
-const fullscreenImage = document.getElementById("fullscreenImage");
-
-// Open fullscreen image on click
-document.querySelectorAll(".grid-item img").forEach(img => {
-    img.addEventListener("click", function () {
-        fullscreenImage.src = this.src;
-        overlay.style.display = "flex"; // Ensure overlay is visible
-        setTimeout(() => {
-            overlay.classList.add("active"); // Add fade-in effect
-        }, 10); // Small delay for smooth effect
+            // Close when clicking outside video
+            wrapper.addEventListener("click", function (event) {
+                if (event.target === wrapper) {
+                    document.body.removeChild(wrapper);
+                    activeOverlay = null;
+                }
+            });
+        });
     });
-});
 
-// Close when clicking outside the image
-overlay.addEventListener("click", function (event) {
-    if (event.target === overlay) {
-        overlay.classList.remove("active"); // Remove animation
-        setTimeout(() => {
-            overlay.style.display = "none"; // Hide after animation ends
-        }, 300);
-    }
-});
+    document.querySelectorAll(".grid-item img").forEach(img => {
+        img.addEventListener("click", function () {
+            if (activeOverlay) return;
+            
+            const fullscreenImage = document.getElementById("fullscreenImage");
+            fullscreenImage.src = this.src;
+            overlay.style.display = "flex";
+            setTimeout(() => {
+                overlay.classList.add("active");
+            }, 10);
+            activeOverlay = overlay;
+        });
+    });
 
-// Close with "Escape" key
-document.addEventListener("keydown", function (event) {
-    if (event.key === "Escape") {
-        overlay.classList.remove("active");
-        setTimeout(() => {
-            overlay.style.display = "none";
-        }, 300);
-    }
+    overlay.addEventListener("click", function (event) {
+        if (event.target === overlay) {
+            overlay.classList.remove("active");
+            setTimeout(() => {
+                overlay.style.display = "none";
+                activeOverlay = null;
+            }, 300);
+        }
+    });
+
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && activeOverlay) {
+            if (activeOverlay !== overlay) {
+                document.body.removeChild(activeOverlay);
+            } else {
+                overlay.classList.remove("active");
+                setTimeout(() => {
+                    overlay.style.display = "none";
+                }, 300);
+            }
+            activeOverlay = null;
+        }
+    });
 });
